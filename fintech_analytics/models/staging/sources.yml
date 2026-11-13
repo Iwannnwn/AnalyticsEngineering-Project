@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: fintech_raw
+    database: fintech-analytics-engineering
+    schema: fintech_raw
+    tables:
+      - name: borrower_data

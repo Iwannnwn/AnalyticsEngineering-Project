@@ -1,0 +1,30 @@
+
+SELECT
+    borrower_id,
+    age,
+    gender,
+    province,
+    education_level,
+    employment_status,
+    monthly_income_idr,
+    regional_minimum_wage_umr_idr,
+    num_active_lending_apps,
+    total_loan_outstanding_idr,
+    credit_limit_granted_idr,
+    loan_tenor_months,
+    daily_interest_rate_pct,
+    primary_loan_purpose,
+    debt_to_income_ratio,
+    income_to_umr_ratio,
+    credit_limit_utilization_ratio,
+    monthly_installment_estimate_idr,
+    debt_service_ratio,
+    disposable_income_after_debt_idr,
+    days_past_due,
+    financial_distress_index,
+    twp90_default_status,
+    primary_default_root_cause,
+    cot_financial_psychology_rationale,
+    confidence_score
+
+FROM {{ source('fintech_raw', 'borrower_data') }}

@@ -1,0 +1,26 @@
+
+version: 2
+
+models:
+  - name: stg_borrowers
+    description: "Staging model containing standardized borrower-level fintech lending data."
+
+    columns:
+      - name: borrower_id
+        description: "Unique identifier for each borrower."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: twp90_default_status
+        description: "Borrower repayment status based on days past due."
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Current-Performing
+                  - Special-Mention-DPD1-30
+                  - Substandard-DPD31-60
+                  - Doubtful-DPD61-90
+                  - Default-Macet-TWP90
