@@ -393,8 +393,11 @@ Analytics Engineering/
 ### Step 1 — Clone the Repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
-cd <YOUR_PROJECT_DIRECTORY>
+# Clone repository
+git clone https://github.com/Iwannnwn/AnalyticsEngineering-Project.git
+
+# Navigate to project directory
+cd AnalyticsEngineering-Project
 ```
 
 ### Step 2 — Create a Virtual Environment
