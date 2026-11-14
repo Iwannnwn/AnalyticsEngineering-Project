@@ -28,8 +28,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   fintech_analytics:
     staging:
+      +schema: fintech_staging
       +materialized: view
+
     marts:
+      +schema: fintech_marts
       +materialized: table
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 

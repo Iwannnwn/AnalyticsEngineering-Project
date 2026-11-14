@@ -1,0 +1,105 @@
+version: 2
+
+models:
+  - name: mart_twp90_monitoring
+    description: >
+      Gold layer model summarizing borrower distribution,
+      outstanding loans, and financial distress by TWP90 status.
+
+    columns:
+      - name: twp90_default_status
+        description: "Borrower repayment status."
+        data_tests:
+          - not_null
+          - unique
+          - accepted_values:
+              arguments:
+                values:
+                  - Current-Performing
+                  - Special-Mention-DPD1-30
+                  - Substandard-DPD31-60
+                  - Doubtful-DPD61-90
+                  - Default-Macet-TWP90
+
+      - name: total_borrowers
+        description: "Number of borrowers in each repayment status."
+        data_tests:
+          - not_null
+
+      - name: borrower_percentage
+        description: "Percentage of borrowers in each repayment status."
+        data_tests:
+          - not_null
+
+  - name: mart_borrower_segmentation
+    description: >
+      Gold layer model segmenting borrowers based on
+      credit utilization and summarizing their financial
+      condition and TWP90 repayment status distribution.
+
+    columns:
+      - name: utilization_segment
+        description: "Credit utilization segment."
+        data_tests:
+          - not_null
+          - unique
+          - accepted_values:
+              arguments:
+                values:
+                  - Low Utilization
+                  - Moderate Utilization
+                  - High Utilization
+                  - Very High Utilization
+
+      - name: total_borrowers
+        data_tests:
+          - not_null
+
+      - name: default_percentage
+        data_tests:
+          - not_null
+
+      - name: avg_utilization
+        data_tests:
+          - not_null
+  
+  - name: mart_credit_risk
+    description: "Credit risk aggregation by debt service ratio and credit utilization segments."
+
+    columns:
+      - name: dsr_segment
+        description: "Borrower segmentation based on debt service ratio."
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Low DSR
+                  - Moderate DSR
+                  - High DSR
+                  - Very High DSR
+
+      - name: utilization_segment
+        description: "Borrower segmentation based on credit limit utilization."
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Low Utilization
+                  - Moderate Utilization
+                  - High Utilization
+                  - Very High Utilization
+
+      - name: total_borrowers
+        data_tests:
+          - not_null
+
+      - name: default_borrowers
+        data_tests:
+          - not_null
+
+      - name: default_percentage
+        data_tests:
+          - not_null
+
