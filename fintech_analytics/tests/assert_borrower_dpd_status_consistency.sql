@@ -1,4 +1,3 @@
-
 SELECT
     borrower_id,
     days_past_due,
