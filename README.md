@@ -1,5 +1,11 @@
 # Fintech Analytics Engineering: Debt Dynamics & Credit Risk Analysis
 
+<p align="center">
+  <img src="D:/Project Data/Project/Analytics Engineering/docs/Architecture.jpg"
+       alt="System Architecture"
+       width="900">
+</p>
+
 An end-to-end Analytics Engineering project focused on transforming Indonesian fintech lending data into reliable, analytics-ready datasets using **Python, Google BigQuery, and dbt Core**.
 
 The project implements a Medallion Architecture (Bronze, Silver, and Gold) to build a structured data transformation pipeline and develop analytical data marts for monitoring borrower repayment performance and credit risk.
