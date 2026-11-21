@@ -1,7 +1,7 @@
 # Fintech Analytics Engineering: Debt Dynamics & Credit Risk Analysis
 
 <p align="center">
-  <img src="D:/Project Data/Project/Analytics Engineering/docs/Architecture.jpg"
+  <img src="docs\Architecture.jpg"
        alt="System Architecture"
        width="900">
 </p>
